@@ -22,7 +22,7 @@ void matrix_multi_int(int n) {
 
     clock_t end = clock();
     double duration = double(end - start) / CLOCKS_PER_SEC;
-    cout << "Integer Matrix Multiplication (n =" << n << ") took "<< duration << " seconds" << endl;
+    cout << "Integer Matrix Multiplication n =" << n << " took "<< duration << " seconds" << endl;
 }
 
 int main() {
