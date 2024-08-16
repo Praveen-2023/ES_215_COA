@@ -19,6 +19,7 @@ def matrix_multi_double(n):
     duration = end-start
     print(f"Double Matrix Multiplication n = {n} took : {duration:.6f} seconds")
 
+
 # Testing with values of n as given
 ns = [64, 128, 256, 512, 1024]
 for n in ns:

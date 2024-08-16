@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void matrix_multi_int(int n) {
+void matrix_multi_int(int n) { 
     vector<vector<int>> A(n, vector<int>(n, 2));  
     vector<vector<int>> B(n, vector<int>(n, 1));  
     vector<vector<int>> C(n, vector<int>(n, 0));  
@@ -22,7 +22,8 @@ void matrix_multi_int(int n) {
 
     clock_t end = clock();
     double duration = double(end - start) / CLOCKS_PER_SEC;
-    cout << "Integer Matrix Multiplication n =" << n << " took "<< duration << " seconds" << endl;
+    cout << "Integer Matrix Multiplication n = " << n << " took "<< duration << " seconds" << endl;
+    
 }
 
 int main() {

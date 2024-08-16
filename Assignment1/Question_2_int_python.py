@@ -19,6 +19,7 @@ def matrix_multi_int(n):
     duration = end - start
     print(f"Integer Matrix Multiplication n = {n} took : {duration:.6f} seconds")
 
+
 # Testing with values as given
 ns = [64,128,256,512,1024]
 for n in ns:
