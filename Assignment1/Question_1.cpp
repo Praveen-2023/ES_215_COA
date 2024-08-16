@@ -49,7 +49,7 @@ void clock_time_speedup(int n, int itr) {
     double time_rec_1 = 0, time_loops_1 = 0,time_rec_memo_1 = 0, time_loops_memo_1 = 0;
 
     for (int i = 0; i< itr; i++) {
-        // Time for recursion
+
         clock_gettime(CLOCK_MONOTONIC, &start);
         fib_rec(n);
         clock_gettime(CLOCK_MONOTONIC, &end);
@@ -57,7 +57,6 @@ void clock_time_speedup(int n, int itr) {
         total_time_rec += time_rec;
         if (i == 0) time_rec_1 = time_rec;
 
-        // Time for loops
         clock_gettime(CLOCK_MONOTONIC, &start);
         fib_loops(n);
         clock_gettime(CLOCK_MONOTONIC, &end);
@@ -65,7 +64,6 @@ void clock_time_speedup(int n, int itr) {
         total_time_loops += time_loops;
         if (i == 0) time_loops_1 = time_loops;
 
-        // Time for recursion with memoization
         vector<long long> memo(n + 1, -1);
         clock_gettime(CLOCK_MONOTONIC, &start);
         fib_rec_memo(n, memo);
@@ -74,7 +72,6 @@ void clock_time_speedup(int n, int itr) {
         total_time_rec_memo += time_rec_memo;
         if (i == 0) time_rec_memo_1 = time_rec_memo;
 
-        // Time for loops with memoization
         clock_gettime(CLOCK_MONOTONIC, &start);
         fib_loops_memo(n);
         clock_gettime(CLOCK_MONOTONIC, &end);
@@ -83,18 +80,18 @@ void clock_time_speedup(int n, int itr) {
         if (i == 0) time_loops_memo_1 = time_loops_memo;
     }
 
-    // Calculate average times
+    // Calculating average times
     double avg_time_rec = total_time_rec / itr;
     double avg_time_loops = total_time_loops / itr;
     double avg_time_rec_memo = total_time_rec_memo / itr;
     double avg_time_loops_memo = total_time_loops_memo / itr;
 
-    // Calculate speedups
+    // Calculating speedups
     double speedup_loops = avg_time_rec / avg_time_loops;
     double speedup_rec_memo = avg_time_rec/ avg_time_rec_memo;
     double speedup_loops_memo = avg_time_rec / avg_time_loops_memo;
 
-    // Print results
+    // Results
     cout << "Time for 1st iteration (recursion): " << time_rec_1 << " seconds" << endl;
     cout << "Time for 1st iteration (loops): " << time_loops_1 << " seconds" << endl;
     cout << "Time for 1st iteration (recursion with memoization): " << time_rec_memo_1 << " seconds" << endl;
